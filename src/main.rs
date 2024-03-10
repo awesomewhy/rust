@@ -1,15 +1,70 @@
+use std::cmp::Ordering;
 use std::io;
 
+#[derive(Debug)]
+struct MySt {
+    lol: i32,
+    asd: i32,
+    kek: String,
+    qwe: f32
+}
+
+#[derive(Debug)]
+struct qwe_asd {
+    lol: i32,
+    asd: i32,
+    kek: String,
+    qwe: f32
+}
 
 fn main() {
+    let mut st: MySt = MySt {
+        lol: 32,
+        asd: 12,
+        kek: String::from("qwe"),
+        qwe: 123.0
+    };
 
-    // let mut user_choise = String::new();
-    //
-    // io::stdin().read_line(&mut user_choise).unwrap();
-    // let temp = user_choise
-    //     .trim()
-    //     .parse::<u8>()
-    //     .expect("ti chel..." );
+    let mut qwe: MySt = MySt {
+        lol: 32,
+        asd: 500,
+        kek: String::from("qwe"),
+        qwe: 123.0
+    };
+
+    let mut lol: qwe_asd = qwe_asd {
+        lol: 32,
+        asd: 999,
+        kek: String::from("qwe"),
+        qwe: 123.0
+    };
+
+    let mut asd = &mut st;
+
+    asd.asd = 234444444;
+
+    print!("{:?}\n", asd);
+
+    asd = &mut qwe;
+
+    print!("{:?}\n", asd);
+
+    let asd = &mut lol;
+
+    println!("{}", asd.asd);
+
+
+
+    let mut vec: Vec<i32> = vec![1,2,3];
+
+    for el in vec.iter_mut() {
+        println!("{}", el);
+        *el *= 2;
+    }
+
+    for el in &vec {
+        // println!("{}", el)
+    }
 
     let result1 = some(123);
     let arr = [1,2,3,4,5,6,7,8,9,10];
@@ -20,6 +75,7 @@ fn main() {
     println!("qwe");
     println!("{res}");
 }
+
 
 fn some(y: i32) -> i32 {
     match y {
